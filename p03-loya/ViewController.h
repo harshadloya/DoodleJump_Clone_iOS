@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameView.h"
 
 @interface ViewController : UIViewController
-
+@property (nonatomic, strong) IBOutlet GameView *gameView;
+@property (nonatomic, strong) CADisplayLink *displayLink;
 
 @end
 

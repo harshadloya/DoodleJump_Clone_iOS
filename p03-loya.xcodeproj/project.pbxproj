@@ -16,6 +16,9 @@
 		AFC2BB561E58D6A90074A034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC2BB541E58D6A90074A034 /* LaunchScreen.storyboard */; };
 		AFC2BB611E58D6A90074A034 /* p03_loyaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2BB601E58D6A90074A034 /* p03_loyaTests.m */; };
 		AFC2BB6C1E58D6A90074A034 /* p03_loyaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2BB6B1E58D6A90074A034 /* p03_loyaUITests.m */; };
+		AFEB9FAF1E5A2DB2002E4E9D /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FAE1E5A2DB2002E4E9D /* GameView.m */; };
+		AFEB9FB21E5A2DDE002E4E9D /* Jumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FB11E5A2DDE002E4E9D /* Jumper.m */; };
+		AFEB9FB51E5A3069002E4E9D /* Brick.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FB41E5A3069002E4E9D /* Brick.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		AFC2BB671E58D6A90074A034 /* p03-loyaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "p03-loyaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC2BB6B1E58D6A90074A034 /* p03_loyaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = p03_loyaUITests.m; sourceTree = "<group>"; };
 		AFC2BB6D1E58D6A90074A034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFEB9FAD1E5A2DB2002E4E9D /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		AFEB9FAE1E5A2DB2002E4E9D /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
+		AFEB9FB01E5A2DDE002E4E9D /* Jumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jumper.h; sourceTree = "<group>"; };
+		AFEB9FB11E5A2DDE002E4E9D /* Jumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jumper.m; sourceTree = "<group>"; };
+		AFEB9FB31E5A3069002E4E9D /* Brick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brick.h; sourceTree = "<group>"; };
+		AFEB9FB41E5A3069002E4E9D /* Brick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brick.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +114,15 @@
 			children = (
 				AFC2BB461E58D6A90074A034 /* AppDelegate.h */,
 				AFC2BB471E58D6A90074A034 /* AppDelegate.m */,
+				AFEB9FAD1E5A2DB2002E4E9D /* GameView.h */,
+				AFEB9FAE1E5A2DB2002E4E9D /* GameView.m */,
+				AFEB9FB01E5A2DDE002E4E9D /* Jumper.h */,
+				AFEB9FB11E5A2DDE002E4E9D /* Jumper.m */,
 				AFC2BB491E58D6A90074A034 /* ViewController.h */,
 				AFC2BB4A1E58D6A90074A034 /* ViewController.m */,
 				AFC2BB4C1E58D6A90074A034 /* Main.storyboard */,
+				AFEB9FB31E5A3069002E4E9D /* Brick.h */,
+				AFEB9FB41E5A3069002E4E9D /* Brick.m */,
 				AFC2BB521E58D6A90074A034 /* Assets.xcassets */,
 				AFC2BB541E58D6A90074A034 /* LaunchScreen.storyboard */,
 				AFC2BB571E58D6A90074A034 /* Info.plist */,
@@ -277,8 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC2BB511E58D6A90074A034 /* p03_loya.xcdatamodeld in Sources */,
+				AFEB9FB51E5A3069002E4E9D /* Brick.m in Sources */,
+				AFEB9FAF1E5A2DB2002E4E9D /* GameView.m in Sources */,
 				AFC2BB4B1E58D6A90074A034 /* ViewController.m in Sources */,
 				AFC2BB481E58D6A90074A034 /* AppDelegate.m in Sources */,
+				AFEB9FB21E5A2DDE002E4E9D /* Jumper.m in Sources */,
 				AFC2BB451E58D6A90074A034 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +529,7 @@
 				AFC2BB721E58D6A90074A034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFC2BB731E58D6A90074A034 /* Build configuration list for PBXNativeTarget "p03-loyaTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +538,7 @@
 				AFC2BB751E58D6A90074A034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFC2BB761E58D6A90074A034 /* Build configuration list for PBXNativeTarget "p03-loyaUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +547,7 @@
 				AFC2BB781E58D6A90074A034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

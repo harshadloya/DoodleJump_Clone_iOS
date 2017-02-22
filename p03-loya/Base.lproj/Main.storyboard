@@ -27,7 +27,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="PLAY GAME"/>
                                 <connections>
-                                    <segue destination="HQV-vb-1aE" kind="presentation" id="Ui6-g5-k2x"/>
+                                    <segue destination="HQV-vb-1aE" kind="presentation" id="dOP-71-MS1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -36,12 +36,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="124"/>
+            <point key="canvasLocation" x="-22" y="124"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Screen View Controller-->
         <scene sceneID="08T-fX-D9a">
             <objects>
-                <viewController id="HQV-vb-1aE" sceneMemberID="viewController">
+                <viewController id="HQV-vb-1aE" customClass="PlayScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jc9-uf-zxA"/>
                         <viewControllerLayoutGuide type="bottom" id="Y1J-TS-zHx"/>
@@ -55,13 +55,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yAu-mf-Hm0">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yAu-mf-Hm0">
                                 <rect key="frame" x="12" y="617" width="350" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="speedChange:" destination="HQV-vb-1aE" eventType="valueChanged" id="TMJ-0u-JfN"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="gameView" destination="zm9-Xa-Nha" id="xaF-Ja-vW1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fC6-w2-qsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

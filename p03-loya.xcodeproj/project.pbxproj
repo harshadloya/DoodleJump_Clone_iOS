@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		AF324F621E5D68DA0073DA48 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = AF324F611E5D68DA0073DA48 /* pikachu.png */; };
 		AF324F7A1E5D73F10073DA48 /* noodle.png in Resources */ = {isa = PBXBuildFile; fileRef = AF324F791E5D73F10073DA48 /* noodle.png */; };
+		AF8ECFB31E5E659D0093AAE3 /* snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFAB1E5E659D0093AAE3 /* snowman.png */; };
+		AF8ECFB41E5E659D0093AAE3 /* ninja.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFAC1E5E659D0093AAE3 /* ninja.png */; };
+		AF8ECFB51E5E659D0093AAE3 /* astro.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFAD1E5E659D0093AAE3 /* astro.png */; };
+		AF8ECFB61E5E659D0093AAE3 /* original.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFAE1E5E659D0093AAE3 /* original.png */; };
+		AF8ECFB71E5E659D0093AAE3 /* santa.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFAF1E5E659D0093AAE3 /* santa.png */; };
+		AF8ECFB81E5E659D0093AAE3 /* batman.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFB01E5E659D0093AAE3 /* batman.png */; };
+		AF8ECFB91E5E659D0093AAE3 /* ironman.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFB11E5E659D0093AAE3 /* ironman.png */; };
+		AF8ECFBA1E5E659D0093AAE3 /* superman.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFB21E5E659D0093AAE3 /* superman.png */; };
 		AFC2BB451E58D6A90074A034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2BB441E58D6A90074A034 /* main.m */; };
 		AFC2BB481E58D6A90074A034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2BB471E58D6A90074A034 /* AppDelegate.m */; };
 		AFC2BB4B1E58D6A90074A034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2BB4A1E58D6A90074A034 /* ViewController.m */; };
@@ -48,6 +56,14 @@
 /* Begin PBXFileReference section */
 		AF324F611E5D68DA0073DA48 /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
 		AF324F791E5D73F10073DA48 /* noodle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noodle.png; sourceTree = "<group>"; };
+		AF8ECFAB1E5E659D0093AAE3 /* snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowman.png; sourceTree = "<group>"; };
+		AF8ECFAC1E5E659D0093AAE3 /* ninja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ninja.png; sourceTree = "<group>"; };
+		AF8ECFAD1E5E659D0093AAE3 /* astro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astro.png; sourceTree = "<group>"; };
+		AF8ECFAE1E5E659D0093AAE3 /* original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = original.png; sourceTree = "<group>"; };
+		AF8ECFAF1E5E659D0093AAE3 /* santa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = santa.png; sourceTree = "<group>"; };
+		AF8ECFB01E5E659D0093AAE3 /* batman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batman.png; sourceTree = "<group>"; };
+		AF8ECFB11E5E659D0093AAE3 /* ironman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ironman.png; sourceTree = "<group>"; };
+		AF8ECFB21E5E659D0093AAE3 /* superman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superman.png; sourceTree = "<group>"; };
 		AFC2BB401E58D6A90074A034 /* p03-loya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "p03-loya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC2BB441E58D6A90074A034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFC2BB461E58D6A90074A034 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +175,14 @@
 				AFEB9FD71E5D5D21002E4E9D /* GameWin2.jpeg */,
 				AFEB9FCA1E5D5BD6002E4E9D /* GameLoseImg.jpeg */,
 				AF324F791E5D73F10073DA48 /* noodle.png */,
+				AF8ECFAB1E5E659D0093AAE3 /* snowman.png */,
+				AF8ECFAC1E5E659D0093AAE3 /* ninja.png */,
+				AF8ECFAD1E5E659D0093AAE3 /* astro.png */,
+				AF8ECFAE1E5E659D0093AAE3 /* original.png */,
+				AF8ECFAF1E5E659D0093AAE3 /* santa.png */,
+				AF8ECFB01E5E659D0093AAE3 /* batman.png */,
+				AF8ECFB11E5E659D0093AAE3 /* ironman.png */,
+				AF8ECFB21E5E659D0093AAE3 /* superman.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -288,8 +312,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFEB9FCB1E5D5BD6002E4E9D /* GameWinImg.jpeg in Resources */,
+				AF8ECFB51E5E659D0093AAE3 /* astro.png in Resources */,
+				AF8ECFB91E5E659D0093AAE3 /* ironman.png in Resources */,
+				AF8ECFB31E5E659D0093AAE3 /* snowman.png in Resources */,
+				AF8ECFB41E5E659D0093AAE3 /* ninja.png in Resources */,
 				AFEB9FC21E5D3E88002E4E9D /* coin.png in Resources */,
+				AF8ECFB61E5E659D0093AAE3 /* original.png in Resources */,
 				AFEB9FCC1E5D5BD6002E4E9D /* GameLoseImg.jpeg in Resources */,
+				AF8ECFBA1E5E659D0093AAE3 /* superman.png in Resources */,
+				AF8ECFB71E5E659D0093AAE3 /* santa.png in Resources */,
+				AF8ECFB81E5E659D0093AAE3 /* batman.png in Resources */,
 				AF324F7A1E5D73F10073DA48 /* noodle.png in Resources */,
 				AF324F621E5D68DA0073DA48 /* pikachu.png in Resources */,
 				AFC2BB561E58D6A90074A034 /* LaunchScreen.storyboard in Resources */,

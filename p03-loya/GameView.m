@@ -33,8 +33,8 @@
         {
             
         }
-        jumper = [[Jumper alloc] initWithFrame:CGRectMake(bounds.size.width/2, bounds.size.height - 20, 92, 70)];
-        [jumper setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"superman.png"]]];
+        jumper = [[Jumper alloc] initWithFrame:CGRectMake(bounds.size.width/2, bounds.size.height - 50, 50, 50)];
+        [jumper setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ironman.png"]]];
         [jumper setDx:0];
         [jumper setDy:10];
         [self addSubview:jumper];
@@ -57,7 +57,7 @@
             [brick removeFromSuperview];
         }
     }
-    NSLog(@"Size of Bricks %f %f", width, height);
+    //NSLog(@"Size of Bricks %f %f", width, height);
     bricks = [[NSMutableArray alloc] init];
     for (int i = 0; i < 10; ++i)
     {

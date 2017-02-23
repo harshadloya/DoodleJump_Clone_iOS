@@ -12,4 +12,6 @@
 @interface PlayScreenViewController : UIViewController
 @property (nonatomic, strong) IBOutlet GameView *gameView;
 @property (nonatomic, strong) CADisplayLink *displayLink;
+
+@property (nonatomic) BOOL *isSwitchEnabled;
 @end

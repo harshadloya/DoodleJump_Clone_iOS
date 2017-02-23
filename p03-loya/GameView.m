@@ -12,6 +12,8 @@
 @synthesize jumper;
 @synthesize bricks;
 @synthesize tilt;
+//@synthesize isSwitchEnabled;
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -27,8 +29,12 @@
     {
         CGRect bounds = [self bounds];
         
-        jumper = [[Jumper alloc] initWithFrame:CGRectMake(bounds.size.width/2, bounds.size.height - 20, 78, 70)];
-        [jumper setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"original.png"]]];
+      //  if(isSwitchEnabled)
+        {
+            
+        }
+        jumper = [[Jumper alloc] initWithFrame:CGRectMake(bounds.size.width/2, bounds.size.height - 20, 92, 70)];
+        [jumper setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"superman.png"]]];
         [jumper setDx:0];
         [jumper setDy:10];
         [self addSubview:jumper];
@@ -39,7 +45,8 @@
 	-(IBAction)makeBricks:(id)sender
 {
     CGRect bounds = [self bounds];
-    float width = (bounds.size.width * .2) + 40;
+    float width = 100;
+    //(bounds.size.width * .2);
     float height = 167;
     
     

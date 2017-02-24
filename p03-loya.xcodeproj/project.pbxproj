@@ -17,6 +17,7 @@
 		AF8ECFB81E5E659D0093AAE3 /* batman.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFB01E5E659D0093AAE3 /* batman.png */; };
 		AF8ECFB91E5E659D0093AAE3 /* ironman.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFB11E5E659D0093AAE3 /* ironman.png */; };
 		AF8ECFBA1E5E659D0093AAE3 /* superman.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8ECFB21E5E659D0093AAE3 /* superman.png */; };
+		AFB2E4371E5F6FD80007D7F1 /* Universe.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB2E4361E5F6FD80007D7F1 /* Universe.m */; };
 		AFC2BB451E58D6A90074A034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2BB441E58D6A90074A034 /* main.m */; };
 		AFC2BB481E58D6A90074A034 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2BB471E58D6A90074A034 /* AppDelegate.m */; };
 		AFC2BB4B1E58D6A90074A034 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2BB4A1E58D6A90074A034 /* ViewController.m */; };
@@ -64,6 +65,8 @@
 		AF8ECFB01E5E659D0093AAE3 /* batman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batman.png; sourceTree = "<group>"; };
 		AF8ECFB11E5E659D0093AAE3 /* ironman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ironman.png; sourceTree = "<group>"; };
 		AF8ECFB21E5E659D0093AAE3 /* superman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superman.png; sourceTree = "<group>"; };
+		AFB2E4351E5F6FD80007D7F1 /* Universe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Universe.h; sourceTree = "<group>"; };
+		AFB2E4361E5F6FD80007D7F1 /* Universe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Universe.m; sourceTree = "<group>"; };
 		AFC2BB401E58D6A90074A034 /* p03-loya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "p03-loya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC2BB441E58D6A90074A034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFC2BB461E58D6A90074A034 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 			children = (
 				AFC2BB461E58D6A90074A034 /* AppDelegate.h */,
 				AFC2BB471E58D6A90074A034 /* AppDelegate.m */,
+				AFB2E4351E5F6FD80007D7F1 /* Universe.h */,
+				AFB2E4361E5F6FD80007D7F1 /* Universe.m */,
 				AFC2BB491E58D6A90074A034 /* ViewController.h */,
 				AFC2BB4A1E58D6A90074A034 /* ViewController.m */,
 				AFEB9FB61E5A5722002E4E9D /* PlayScreenViewController.h */,
@@ -353,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC2BB511E58D6A90074A034 /* p03_loya.xcdatamodeld in Sources */,
+				AFB2E4371E5F6FD80007D7F1 /* Universe.m in Sources */,
 				AFEB9FB51E5A3069002E4E9D /* Brick.m in Sources */,
 				AFEB9FB81E5A5722002E4E9D /* PlayScreenViewController.m in Sources */,
 				AFEB9FAF1E5A2DB2002E4E9D /* GameView.m in Sources */,

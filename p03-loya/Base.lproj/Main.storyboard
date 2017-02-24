@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +52,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0S-Lx-R6i">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u0S-Lx-R6i">
                                 <rect key="frame" x="163" y="475" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -78,20 +79,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yAu-mf-Hm0">
-                                <rect key="frame" x="12" y="617" width="350" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yAu-mf-Hm0">
+                                <rect key="frame" x="14" y="617" width="347" height="31"/>
                                 <connections>
                                     <action selector="speedChange:" destination="HQV-vb-1aE" eventType="valueChanged" id="TMJ-0u-JfN"/>
                                 </connections>
                             </slider>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zm9-Xa-Nha" customClass="GameView">
-                                <rect key="frame" x="7" y="20" width="360" height="590"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zm9-Xa-Nha" customClass="GameView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="589"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdn-br-mET">
+                                        <rect key="frame" x="310" y="8" width="70" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="VMz-WF-Bd2"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9A-fn-fwT">
+                                        <rect key="frame" x="147" y="0.0" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="Level" destination="a9A-fn-fwT" id="eRL-GJ-SK0"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="yAu-mf-Hm0" secondAttribute="leading" id="F0j-VB-FZP"/>
+                            <constraint firstItem="zm9-Xa-Nha" firstAttribute="top" secondItem="Jc9-uf-zxA" secondAttribute="bottom" id="GdW-4X-xxN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yAu-mf-Hm0" secondAttribute="trailing" id="OhI-Qa-dRf"/>
+                            <constraint firstItem="Y1J-TS-zHx" firstAttribute="top" secondItem="yAu-mf-Hm0" secondAttribute="bottom" constant="20" id="Rjo-Zw-dig"/>
+                            <constraint firstItem="yAu-mf-Hm0" firstAttribute="top" secondItem="zm9-Xa-Nha" secondAttribute="bottom" constant="8" id="b0C-Fg-MNf"/>
+                            <constraint firstItem="zm9-Xa-Nha" firstAttribute="leading" secondItem="fiJ-k4-8Z9" secondAttribute="leadingMargin" constant="-16" id="sHy-u9-YL2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zm9-Xa-Nha" secondAttribute="trailing" constant="-16" id="szS-b6-LDA"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="gameView" destination="zm9-Xa-Nha" id="xaF-Ja-vW1"/>

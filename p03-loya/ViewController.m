@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "PlayScreenViewController.h"
+
 
 @interface ViewController ()
 
@@ -16,12 +16,10 @@
 
 @implementation ViewController
 
-BOOL *setSwitch;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    //[self switchValue:nil];
 }
 
 
@@ -37,21 +35,12 @@ BOOL *setSwitch;
     if([mySwitch isOn])
     {
         NSLog(@"Doodle Family Selected");
-        *setSwitch = YES;
+        [[Universe sharedInstance] setSwitchStatus:YES];
     }
     else
     {
         NSLog(@"Minion Family Selected");
-        *setSwitch = NO;
-    }
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"startGame"])
-    {
-        PlayScreenViewController *controller = (PlayScreenViewController *)segue.destinationViewController;
-        controller.isSwitchEnabled = setSwitch;
+        [[Universe sharedInstance] setSwitchStatus:NO];
     }
 }
 

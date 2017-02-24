@@ -22,7 +22,6 @@
     [_displayLink setPreferredFramesPerSecond:30];
     [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 
-
 }
 
 - (void)didReceiveMemoryWarning {

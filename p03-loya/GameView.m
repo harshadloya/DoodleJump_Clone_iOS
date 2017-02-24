@@ -79,7 +79,8 @@
         x = rand() % (int)(bounds.size.width * .8) + width/2;
         NSLog(@"X %f", x);
         
-        y = (int)(bounds.size.height/11 * i + 50);
+        y = (int)(bounds.size.height/11 * i + 37);
+        
         NSLog(@"Y %f", y);
         
         [b setCenter:CGPointMake(x , y)];

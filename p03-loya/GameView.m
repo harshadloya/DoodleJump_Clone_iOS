@@ -13,7 +13,7 @@
 @synthesize bricks;
 @synthesize tilt;
 @synthesize x, y;
-
+@synthesize animatedImageView;
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -35,7 +35,8 @@
 
 -(void)makeBricks:(id)sender
 {
-    UIImageView* animatedImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+
+    animatedImageView = [[UIImageView alloc] initWithFrame:self.bounds];
     
     if([[Universe sharedInstance] levelCounter] == 1)
     {
@@ -148,9 +149,6 @@
 {
     CGRect bounds = [self bounds];
     
-    
-    //NSLog(@"Brick Point %f", bounds.size.width/2);
-    //NSLog(@"Jumper Point %f", bounds.size.height-50);
     jumper = [[Jumper alloc] initWithFrame:CGRectMake(bounds.size.width/2, bounds.size.height-50, 50, 50)];
     
     [jumper setDx:0];
@@ -210,8 +208,9 @@
     // add a positive velocity to move him
     if (p.y > bounds.size.height-25)
     {
-        [jumper setDy:10];
+        //[jumper setDy:10];
         p.y = bounds.size.height-25;
+        [self gameLoose];
     }
     
     // If we've gone past the top of the screen, wrap around
@@ -230,9 +229,9 @@
         else
         {
             [[Universe sharedInstance] setLevelCounter:1];
-            [self startLevel];
+            //[self startLevel];
             //temp commenting below and putting above call
-            //[self gameWin];
+            [self gameWin];
         }
 
     }
@@ -272,11 +271,89 @@
     // NSLog(@"Timestamp %f", ts);
 }
 
+//Keeping it little different from alert yet
+-(void) gameLoose
+{
+    NSLog(@"Game Loose");
+    
+    [self reset];
+    
+    UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 50)];
+    [text setText:@"YOU LOOSE"];
+    [text setFont:[UIFont systemFontOfSize:30]];
+    [text setAdjustsFontSizeToFitWidth:YES];
+    [text setCenter:CGPointMake((int)self.bounds.size.width/2, 100)];
+    [self addSubview: text];
+    
+    UIImageView *gameLooseImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gameloose.jpg"]];
+    [gameLooseImageView setCenter:CGPointMake((int)self.bounds.size.width/2, (int)self.bounds.size.height/2)];
+    [self addSubview: gameLooseImageView];
+    
+    [[[Universe sharedInstance] displayLink] removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+}
 -(void) gameWin
 {
-    NSLog(@"You passed all levels, congrats you win.");
+    NSLog(@"Game WIN");
+    
+    [self reset];
+    
+    UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 50)];
+    [text setText:@"YOU WIN"];
+    [text setFont:[UIFont systemFontOfSize:30]];
+    [text setAdjustsFontSizeToFitWidth:YES];
+    [text setCenter:CGPointMake((int)self.bounds.size.width/2, 100)];
+    [self addSubview: text];
+    
+    UIImageView *gameWinImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gamewin.jpg"]];
+    [gameWinImageView setCenter:CGPointMake((int)self.bounds.size.width/2, (int)self.bounds.size.height/2)];
+    [self addSubview: gameWinImageView];
+    
     //alert to pop up instead of exit
-    exit(0);
+    
+    //exit(0);
+    [[[Universe sharedInstance] displayLink] removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
+
+- (void) reset
+{
+    if (bricks)
+    {
+        for (Brick *brick in bricks)
+        {
+            [brick removeFromSuperview];
+        }
+    }
+    
+    if (jumper)
+    {
+        [jumper setDx:0];
+        [jumper setDy:0];
+        [jumper removeFromSuperview];
+    }
+    
+    if (animatedImageView)
+    {
+        [animatedImageView removeFromSuperview];
+    }
+    
+    [self setBackgroundColor:[UIColor whiteColor]];
+    
+    [[Universe sharedInstance] setLevelCounter:1];
+}
+
+//Not used, may need later
+- (void) playAgain
+{
+    [self reset];
+    [self startLevel];
+}
+
+
+- (IBAction)back
+{
+    [self reset];
+    [[Universe sharedInstance] setSwitchStatus:NO];
 }
 
 @end

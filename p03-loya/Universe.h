@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Universe : NSObject
 
 @property (nonatomic) BOOL switchStatus;
 +(Universe *)sharedInstance;
 @property (nonatomic) int levelCounter;
+@property (nonatomic, strong) CADisplayLink *displayLink;
 
 @end

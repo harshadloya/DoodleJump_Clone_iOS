@@ -12,6 +12,7 @@
 
 @synthesize switchStatus;
 @synthesize levelCounter;
+@synthesize displayLink;
 
 static Universe *singleton = nil;
 

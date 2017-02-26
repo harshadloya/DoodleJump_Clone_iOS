@@ -93,6 +93,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Back"/>
                                         <connections>
+                                            <action selector="back" destination="zm9-Xa-Nha" eventType="touchUpInside" id="fNS-kW-hhT"/>
                                             <segue destination="BYZ-38-t0r" kind="presentation" id="VMz-WF-Bd2"/>
                                         </connections>
                                     </button>

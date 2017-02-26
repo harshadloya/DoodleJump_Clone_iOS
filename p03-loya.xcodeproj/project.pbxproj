@@ -88,12 +88,12 @@
 		AFE7EA5F1E62A0E10085A303 /* spacebrick.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA5C1E62A0E10085A303 /* spacebrick.png */; };
 		AFE7EA601E62A0E10085A303 /* noodlebrick.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA5D1E62A0E10085A303 /* noodlebrick.png */; };
 		AFE7EA611E62A0E10085A303 /* snowbrick.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA5E1E62A0E10085A303 /* snowbrick.png */; };
+		AFE7EA651E62A2FD0085A303 /* gamewin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA641E62A2FD0085A303 /* gamewin.jpg */; };
+		AFE7EA671E62A36B0085A303 /* gameloose.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA661E62A36B0085A303 /* gameloose.jpg */; };
 		AFEB9FAF1E5A2DB2002E4E9D /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FAE1E5A2DB2002E4E9D /* GameView.m */; };
 		AFEB9FB21E5A2DDE002E4E9D /* Jumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FB11E5A2DDE002E4E9D /* Jumper.m */; };
 		AFEB9FB51E5A3069002E4E9D /* Brick.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FB41E5A3069002E4E9D /* Brick.m */; };
 		AFEB9FB81E5A5722002E4E9D /* PlayScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FB71E5A5722002E4E9D /* PlayScreenViewController.m */; };
-		AFEB9FCB1E5D5BD6002E4E9D /* GameWinImg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFEB9FC91E5D5BD6002E4E9D /* GameWinImg.jpeg */; };
-		AFEB9FCC1E5D5BD6002E4E9D /* GameLoseImg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFEB9FCA1E5D5BD6002E4E9D /* GameLoseImg.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +204,8 @@
 		AFE7EA5C1E62A0E10085A303 /* spacebrick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacebrick.png; sourceTree = "<group>"; };
 		AFE7EA5D1E62A0E10085A303 /* noodlebrick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noodlebrick.png; sourceTree = "<group>"; };
 		AFE7EA5E1E62A0E10085A303 /* snowbrick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowbrick.png; sourceTree = "<group>"; };
+		AFE7EA641E62A2FD0085A303 /* gamewin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gamewin.jpg; sourceTree = "<group>"; };
+		AFE7EA661E62A36B0085A303 /* gameloose.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameloose.jpg; sourceTree = "<group>"; };
 		AFEB9FAD1E5A2DB2002E4E9D /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		AFEB9FAE1E5A2DB2002E4E9D /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		AFEB9FB01E5A2DDE002E4E9D /* Jumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jumper.h; sourceTree = "<group>"; };
@@ -212,8 +214,6 @@
 		AFEB9FB41E5A3069002E4E9D /* Brick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brick.m; sourceTree = "<group>"; };
 		AFEB9FB61E5A5722002E4E9D /* PlayScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayScreenViewController.h; sourceTree = "<group>"; };
 		AFEB9FB71E5A5722002E4E9D /* PlayScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayScreenViewController.m; sourceTree = "<group>"; };
-		AFEB9FC91E5D5BD6002E4E9D /* GameWinImg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GameWinImg.jpeg; sourceTree = "<group>"; };
-		AFEB9FCA1E5D5BD6002E4E9D /* GameLoseImg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GameLoseImg.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,8 +299,6 @@
 				AFE7EA5E1E62A0E10085A303 /* snowbrick.png */,
 				AFE7EA5A1E629C240085A303 /* noodleback.jpg */,
 				AFC2BB441E58D6A90074A034 /* main.m */,
-				AFEB9FC91E5D5BD6002E4E9D /* GameWinImg.jpeg */,
-				AFEB9FCA1E5D5BD6002E4E9D /* GameLoseImg.jpeg */,
 				AF8ECFAB1E5E659D0093AAE3 /* snowman.png */,
 				AF8ECFAC1E5E659D0093AAE3 /* ninja.png */,
 				AF8ECFAD1E5E659D0093AAE3 /* astro.png */,
@@ -309,6 +307,8 @@
 				AF8ECFB01E5E659D0093AAE3 /* batman.png */,
 				AF8ECFB11E5E659D0093AAE3 /* ironman.png */,
 				AF8ECFB21E5E659D0093AAE3 /* superman.png */,
+				AFE7EA661E62A36B0085A303 /* gameloose.jpg */,
+				AFE7EA641E62A2FD0085A303 /* gamewin.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -512,8 +512,8 @@
 				AFE7EA3B1E62915E0085A303 /* space16.gif in Resources */,
 				AFE7EA2E1E62915E0085A303 /* space3.gif in Resources */,
 				AFE7E9F51E628AF70085A303 /* snow5.gif in Resources */,
+				AFE7EA651E62A2FD0085A303 /* gamewin.jpg in Resources */,
 				AFE7EA3A1E62915E0085A303 /* space15.gif in Resources */,
-				AFEB9FCB1E5D5BD6002E4E9D /* GameWinImg.jpeg in Resources */,
 				AF8ECFB51E5E659D0093AAE3 /* astro.png in Resources */,
 				AFE7EA361E62915E0085A303 /* space11.gif in Resources */,
 				AFE7EA371E62915E0085A303 /* space12.gif in Resources */,
@@ -533,6 +533,7 @@
 				AFE7EA301E62915E0085A303 /* space5.gif in Resources */,
 				AFE7E9F71E628AF70085A303 /* snow7.gif in Resources */,
 				AFE7EA5B1E629C240085A303 /* noodleback.jpg in Resources */,
+				AFE7EA671E62A36B0085A303 /* gameloose.jpg in Resources */,
 				AFE7EA401E62915E0085A303 /* space21.gif in Resources */,
 				AFE7EA471E62915E0085A303 /* space28.gif in Resources */,
 				AFE7E9FC1E628AF70085A303 /* snow12.gif in Resources */,
@@ -560,7 +561,6 @@
 				AFE7EA311E62915E0085A303 /* space6.gif in Resources */,
 				AFE7EA2D1E62915E0085A303 /* space2.gif in Resources */,
 				AF8ECFB61E5E659D0093AAE3 /* original.png in Resources */,
-				AFEB9FCC1E5D5BD6002E4E9D /* GameLoseImg.jpeg in Resources */,
 				AF8ECFBA1E5E659D0093AAE3 /* superman.png in Resources */,
 				AFE7E9FB1E628AF70085A303 /* snow11.gif in Resources */,
 				AFE7EA4E1E62915E0085A303 /* space35.gif in Resources */,

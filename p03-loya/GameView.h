@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *Level;
 @property (nonatomic) float x;
 @property (nonatomic) float y;
+@property (nonatomic) UIImageView *animatedImageView;
 
 -(void) arrange:(CADisplayLink *) sender;
 

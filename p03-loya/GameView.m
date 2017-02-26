@@ -230,11 +230,9 @@
     // If we've gone past the top of the screen, wrap around
     if (p.y < 0)
     {
-        //p.y += bounds.size.height;
-        p.y = bounds.size.height;
+        p.y = bounds.size.height-25;
         [jumper removeFromSuperview];
         
-        //NSLog(@"Count %d", [[Universe sharedInstance] levelCounter]);
         if([[Universe sharedInstance] levelCounter] < 3)
         {
             [[Universe sharedInstance] setLevelCounter:([[Universe sharedInstance] levelCounter] + 1)];
@@ -257,21 +255,15 @@
     
     // If we are moving down, and we touch a brick, we get
     // a jump to push us up.
-    //
     if ([jumper dy] < 0)
     {
         for (Brick *brick in bricks)
         {
             CGRect b = [brick frame];
-            //NSLog(@" %d   %d", b, p);
             
             p.y += 17;
             if (CGRectContainsPoint(b, p))
-            //CGPoint temp = [brick center];
-            //if(temp.x == p.x && temp.y == p.y)
             {
-             //   NSLog(@"Brick Point %@", NSStringFromCGRect(b));
-               // NSLog(@"Jumper Point %@", NSStringFromCGPoint(p));
                 // Yay!  Bounce!
                 NSLog(@"Bounce!");
                 [jumper setDy:10];
@@ -280,7 +272,6 @@
             p.y -= 17;
         }
     }
-    //p.y -= 117;
     
     [jumper setCenter:p];
     // NSLog(@"Timestamp %f", ts);

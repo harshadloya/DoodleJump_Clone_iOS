@@ -90,6 +90,7 @@
 		AFE7EA611E62A0E10085A303 /* snowbrick.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA5E1E62A0E10085A303 /* snowbrick.png */; };
 		AFE7EA651E62A2FD0085A303 /* gamewin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA641E62A2FD0085A303 /* gamewin.jpg */; };
 		AFE7EA671E62A36B0085A303 /* gameloose.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA661E62A36B0085A303 /* gameloose.jpg */; };
+		AFE7EA691E62CA8E0085A303 /* bggrid.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE7EA681E62CA8E0085A303 /* bggrid.png */; };
 		AFEB9FAF1E5A2DB2002E4E9D /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FAE1E5A2DB2002E4E9D /* GameView.m */; };
 		AFEB9FB21E5A2DDE002E4E9D /* Jumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FB11E5A2DDE002E4E9D /* Jumper.m */; };
 		AFEB9FB51E5A3069002E4E9D /* Brick.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEB9FB41E5A3069002E4E9D /* Brick.m */; };
@@ -206,6 +207,7 @@
 		AFE7EA5E1E62A0E10085A303 /* snowbrick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowbrick.png; sourceTree = "<group>"; };
 		AFE7EA641E62A2FD0085A303 /* gamewin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gamewin.jpg; sourceTree = "<group>"; };
 		AFE7EA661E62A36B0085A303 /* gameloose.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameloose.jpg; sourceTree = "<group>"; };
+		AFE7EA681E62CA8E0085A303 /* bggrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bggrid.png; sourceTree = "<group>"; };
 		AFEB9FAD1E5A2DB2002E4E9D /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		AFEB9FAE1E5A2DB2002E4E9D /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		AFEB9FB01E5A2DDE002E4E9D /* Jumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jumper.h; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				AFE7EA5A1E629C240085A303 /* noodleback.jpg */,
 				AFC2BB441E58D6A90074A034 /* main.m */,
 				AF8ECFAB1E5E659D0093AAE3 /* snowman.png */,
+				AFE7EA681E62CA8E0085A303 /* bggrid.png */,
 				AF8ECFAC1E5E659D0093AAE3 /* ninja.png */,
 				AF8ECFAD1E5E659D0093AAE3 /* astro.png */,
 				AF8ECFAE1E5E659D0093AAE3 /* original.png */,
@@ -517,6 +520,7 @@
 				AF8ECFB51E5E659D0093AAE3 /* astro.png in Resources */,
 				AFE7EA361E62915E0085A303 /* space11.gif in Resources */,
 				AFE7EA371E62915E0085A303 /* space12.gif in Resources */,
+				AFE7EA691E62CA8E0085A303 /* bggrid.png in Resources */,
 				AFE7EA491E62915E0085A303 /* space30.gif in Resources */,
 				AFE7EA321E62915E0085A303 /* space7.gif in Resources */,
 				AFE7EA4A1E62915E0085A303 /* space31.gif in Resources */,

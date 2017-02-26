@@ -14,6 +14,8 @@
 @synthesize tilt;
 @synthesize x, y;
 @synthesize animatedImageView;
+@synthesize startOfNewLevel;
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -36,6 +38,11 @@
 -(void)makeBricks:(id)sender
 {
 
+    if (animatedImageView)
+    {
+        [animatedImageView removeFromSuperview];
+    }
+    
     animatedImageView = [[UIImageView alloc] initWithFrame:self.bounds];
     
     if([[Universe sharedInstance] levelCounter] == 1)
@@ -147,6 +154,7 @@
 
 -(void) startLevel
 {
+    startOfNewLevel = YES;
     CGRect bounds = [self bounds];
     
     jumper = [[Jumper alloc] initWithFrame:CGRectMake(bounds.size.width/2, bounds.size.height-50, 50, 50)];
@@ -208,9 +216,15 @@
     // add a positive velocity to move him
     if (p.y > bounds.size.height-25)
     {
-        //[jumper setDy:10];
         p.y = bounds.size.height-25;
-        [self gameLoose];
+        if (startOfNewLevel)
+        {
+            [jumper setDy:10];
+        }
+        else
+        {
+            [self gameLoose];
+        }
     }
     
     // If we've gone past the top of the screen, wrap around
@@ -261,6 +275,7 @@
                 // Yay!  Bounce!
                 NSLog(@"Bounce!");
                 [jumper setDy:10];
+                startOfNewLevel = NO;
             }
             p.y -= 17;
         }
@@ -271,10 +286,27 @@
     // NSLog(@"Timestamp %f", ts);
 }
 
-//Keeping it little different from alert yet
+
 -(void) gameLoose
 {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Game Over" message:@"You LOST!!! Press Cancel or Play Again." preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Play Again", @"OK action") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                               {
+                                   NSLog(@"Play Again Selected");
+                                   [self playAgain];
+                               }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action)
+                               {
+                                   NSLog(@"Cancel Selected");
+                               }];
+    [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    
     NSLog(@"Game Loose");
+    
+    UIViewController *vc = [self parentViewController];
+    [vc presentViewController:alertController animated:YES completion:nil];
     
     [self reset];
     
@@ -308,9 +340,6 @@
     [gameWinImageView setCenter:CGPointMake((int)self.bounds.size.width/2, (int)self.bounds.size.height/2)];
     [self addSubview: gameWinImageView];
     
-    //alert to pop up instead of exit
-    
-    //exit(0);
     [[[Universe sharedInstance] displayLink] removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
@@ -345,6 +374,7 @@
 //Not used, may need later
 - (void) playAgain
 {
+    [[[Universe sharedInstance] displayLink] addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     [self reset];
     [self startLevel];
 }
@@ -356,4 +386,12 @@
     [[Universe sharedInstance] setSwitchStatus:NO];
 }
 
+
+//Referenced below method from http://stackoverflow.com/questions/1372977/given-a-view-how-do-i-get-its-viewcontroller
+- (UIViewController *)parentViewController {
+    UIResponder *responder = self;
+    while ([responder isKindOfClass:[UIView class]])
+        responder = [responder nextResponder];
+    return (UIViewController *)responder;
+}
 @end

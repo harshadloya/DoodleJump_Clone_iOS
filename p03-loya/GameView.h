@@ -20,6 +20,7 @@
 @property (nonatomic) float x;
 @property (nonatomic) float y;
 @property (nonatomic) UIImageView *animatedImageView;
+@property (nonatomic) BOOL startOfNewLevel;
 
 -(void) arrange:(CADisplayLink *) sender;
 

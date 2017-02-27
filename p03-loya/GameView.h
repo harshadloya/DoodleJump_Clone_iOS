@@ -16,7 +16,7 @@
 @property (nonatomic, strong) Jumper *jumper;
 @property (nonatomic, strong) NSMutableArray *bricks;
 @property (nonatomic) float tilt;
-@property (strong, nonatomic) IBOutlet UILabel *Level;
+@property (nonatomic) UILabel *levelName;
 @property (nonatomic) float x;
 @property (nonatomic) float y;
 @property (nonatomic) UIImageView *animatedImageView;
@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSMutableArray *brickCenters;
 @property (nonatomic, strong) NSMutableArray *brickVerticalMovers;
 @property (nonatomic, strong) NSMutableArray *brickHorizontalMovers;
+@property (nonatomic) UILabel *levelNumber;
 
 -(void) arrange:(CADisplayLink *) sender;
 

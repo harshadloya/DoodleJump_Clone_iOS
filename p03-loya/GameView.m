@@ -44,6 +44,16 @@
         [animatedImageView removeFromSuperview];
     }
     
+    if (_levelNumber)
+    {
+        [_levelNumber removeFromSuperview];
+    }
+    
+    if (_levelName)
+    {
+        [_levelName removeFromSuperview];
+    }
+    
     animatedImageView = [[UIImageView alloc] initWithFrame:self.bounds];
     
     if([[Universe sharedInstance] levelCounter] == 1)
@@ -109,17 +119,33 @@
     bricks = [[NSMutableArray alloc] init];
     brickCenters = [[NSMutableArray alloc] init];
     
+    _levelNumber = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 50)];
+    
+    [_levelNumber setFont:[UIFont systemFontOfSize:30]];
+    [_levelNumber setAdjustsFontSizeToFitWidth:YES];
+    [_levelNumber setCenter:CGPointMake(90, 30)];
+    [_levelNumber setTextColor:[UIColor whiteColor]];
+    
+    _levelName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 13, 250)];
+    //[_levelName setAdjustsFontSizeToFitWidth:YES];
+    [_levelName setCenter:CGPointMake(30, 300)];
+    [_levelName setNumberOfLines:11];
+    [_levelName setLineBreakMode:NSLineBreakByCharWrapping];
+    
     for (int i = 0; i < 10; ++i)
     {
         Brick *b = [[Brick alloc] initWithFrame:CGRectMake(0, 0, width, height)];
         [b setDx:8];
         [b setDy:8];
         
+        
         if([[Universe sharedInstance] levelCounter] == 1)
         {
             [b setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"noodlebrick.png"]]];
             [self setBackgroundColor:[UIColor purpleColor]];
-            [_Level setText:@"Level 1"];
+            [_levelName setText:@"Noodle Jump"];
+            [_levelName setTextColor:[UIColor blackColor]];
+            [_levelNumber setText:@"Level 1"];
             
             
         }
@@ -127,16 +153,24 @@
         {
             [b setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"spacebrick.png"]]];
             [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"spacebackground.gif"]]];
-            [_Level setText:@"Level 2"];
+            [_levelName setText:@"Space Jump"];
+            [_levelName setTextColor:[UIColor whiteColor]];
+            [_levelNumber setText:@"Level 2"];
         }
         else if ([[Universe sharedInstance] levelCounter] == 3)
         {
             [b setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"snowbrick.png"]]];
             [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"snow.gif"]]];
-            [_Level setText:@"Level 3"];
+            [_levelName setText:@"Snow Jump"];
+            [_levelName setTextColor:[UIColor whiteColor]];
+            [_levelNumber setText:@"Level 3"];
         }
         else
-            [_Level setText:@"Level"];
+            [_levelNumber setText:@"Level"];
+            //[_Level setText:@"Level"];
+        
+        [self addSubview:_levelName];
+        [self addSubview: _levelNumber];
         
         [self addSubview:b];
         x = rand() % (int)(bounds.size.width * .8) + width/2;
@@ -492,6 +526,8 @@
     {
         for (Brick *brick in bricks)
         {
+            [brick setDx:0];
+            [brick setDy:0];
             [brick removeFromSuperview];
         }
     }
@@ -508,12 +544,22 @@
         [animatedImageView removeFromSuperview];
     }
     
+    if (_levelNumber)
+    {
+        [_levelNumber removeFromSuperview];
+    }
+    
+    if (_levelName)
+    {
+        [_levelName removeFromSuperview];
+    }
+    
     [self setBackgroundColor:[UIColor whiteColor]];
     
     [[Universe sharedInstance] setLevelCounter:1];
 }
 
-//Not used, may need later
+//Used but, there occurs a delay for the movement to start again.
 - (void) playAgain
 {
     [[[Universe sharedInstance] displayLink] addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];

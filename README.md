@@ -12,6 +12,14 @@ Click on build.
 
 Game should then run in the simulator.
 
+## Game Rules ##
+Reaching the top of the screen brings you to the next level.
+
+Clearing 3 levels with the same doodle wins you the game.
+
+You can bounce back from the bottom of the screen only till you bounce off the 1st brick, after that touching the bottom of the screen looses you the game.
+
+
 ## Repo owner or admin ##
 Harshad Loya.
 

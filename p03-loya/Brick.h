@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface Brick : UIView
-
+@property (nonatomic) float dx, dy;
 @end

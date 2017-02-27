@@ -10,11 +10,12 @@
 
 @implementation GameView
 @synthesize jumper;
-@synthesize bricks;
+@synthesize bricks, brickCenters;
 @synthesize tilt;
 @synthesize x, y;
 @synthesize animatedImageView;
 @synthesize startOfNewLevel;
+@synthesize brickVerticalMovers, brickHorizontalMovers;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -106,9 +107,13 @@
     }
     
     bricks = [[NSMutableArray alloc] init];
+    brickCenters = [[NSMutableArray alloc] init];
+    
     for (int i = 0; i < 10; ++i)
     {
         Brick *b = [[Brick alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+        [b setDx:10];
+        [b setDy:10];
         
         if([[Universe sharedInstance] levelCounter] == 1)
         {
@@ -136,13 +141,20 @@
         [self addSubview:b];
         x = rand() % (int)(bounds.size.width * .8) + width/2;
        // NSLog(@"X %f", x);
+        while (x < 100) {
+            x = rand() % (int)(bounds.size.width * .8) + width/2;
+        }
         
         y = (int)(bounds.size.height/11 * i + 37);
         
        // NSLog(@"Y %f", y);
         
         [b setCenter:CGPointMake(x , y)];
+        
+        [brickCenters addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
+        
         [bricks addObject:b];
+
     }
    // Brick *c = [[Brick alloc] initWithFrame:CGRectMake(0, 0, width, height)];
     //[c setBackgroundColor:[UIColor blackColor]];
@@ -187,8 +199,70 @@
     }
     
     [self makeBricks:nil];
+    if(startOfNewLevel)
+    {
+        [self randomBrickSelect];
+    }
     [self addSubview:jumper];
     
+}
+
+-(void) randomBrickSelect
+{
+    if(brickVerticalMovers.count > 0)
+    {
+     //   [brickVerticalMovers removeAllObjects];
+    }
+    if(brickHorizontalMovers.count > 0)
+    {
+       // [brickHorizontalMovers removeAllObjects];
+    }
+    
+    brickHorizontalMovers = [[NSMutableArray alloc] init];
+    brickVerticalMovers = [[NSMutableArray alloc] init];
+    
+    for (int z=0; z < [bricks count]-4; z++)
+    {
+        int num = (int)arc4random_uniform(10);
+        if(![brickHorizontalMovers containsObject:[NSNumber numberWithInt:num]])
+        {
+            [brickHorizontalMovers addObject:[NSNumber numberWithInt:num]];
+        }
+    }
+    
+    //Removing extra bricks.... cannot have more than 5 bricks moving in left&right direction
+    if([brickHorizontalMovers count] > 5)
+    {
+        int length = (int)[brickHorizontalMovers count];
+        NSLog(@"%d", length);
+        for (int z=5; z < length; z++)
+        {
+            [brickHorizontalMovers removeLastObject];
+        }
+    }
+    
+    
+    for (int z=0; z < 10; z++)
+    {
+        int num = (int)arc4random_uniform(10);
+        if(![brickHorizontalMovers containsObject:[NSNumber numberWithInt:num]] && ![brickVerticalMovers containsObject:[NSNumber numberWithInt:num]])
+        {
+            [brickVerticalMovers addObject:[NSNumber numberWithInt:num]];
+        }
+    }
+    
+    //Removing extra bricks.... cannot have more than 4 bricks moving in up&down direction
+    if([brickVerticalMovers count] > 4)
+    {
+        int length = (int)[brickVerticalMovers count];
+        NSLog(@"%d", length);
+        for (int z=4; z < length; z++)
+        {
+           [brickVerticalMovers removeLastObject];
+        }
+    }
+    
+    //NSLog(@"YO YO");
 }
 
 -(void)arrange:(CADisplayLink *)sender
@@ -197,7 +271,76 @@
     
     // Apply gravity to the acceleration of the jumper
     [jumper setDy:[jumper dy] - .3];
+        
+        
+    //brick movement
+    for (int i=0; i<[brickHorizontalMovers count]; i++)
+    {
+        [[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] setDx:[[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] dx] - .7];
+        [[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] setDy:0];
+        
+        CGPoint pb = [[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] center];
+        pb.x -= [[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] dx];
+        
+        //not necessary for horizontal movement
+        //pb.y += [[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] dy];
+        
+        //Move Right after Left 50px
+        if (pb.x <  [[brickCenters objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] CGPointValue].x - 275)
+        {
+            pb.x = [[brickCenters objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] CGPointValue].x - 275;
+            [[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] setDx:-10];
+            
+        }
+        
+        //Move Left after Right 50px
+        if (pb.x > [[brickCenters objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] CGPointValue].x)
+        {
+            pb.x = [[brickCenters objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] CGPointValue].x;
+            [[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] setDx:10];
+        }
+        
+        [[bricks objectAtIndex:[[brickHorizontalMovers objectAtIndex:i] integerValue]] setCenter:pb];
+    }
     
+    
+    for (int i=0; i<[brickVerticalMovers count]; i++)
+    {
+        [[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] setDy:[[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] dy] - .7];
+        [[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] setDx:0];
+        
+        CGPoint pb = [[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] center];
+        pb.y -= [[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] dy];
+        
+        //not necessary for vertical movement
+        //pb.x -= [[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] dx];
+        
+        
+        //Move Up
+        if (pb.y <  [[brickCenters objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] CGPointValue].y - 170)
+        {
+            
+            if(([[brickCenters objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] CGPointValue].y - 170) > 10)
+                pb.y = [[brickCenters objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] CGPointValue].y - 170;
+            else
+                pb.y = 10;
+            [[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] setDy:-10];
+            
+        }
+        
+        //Move Down
+        if (pb.y > [[brickCenters objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] CGPointValue].y)
+        {
+            if(([[brickCenters objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] CGPointValue].y) < (self.bounds.size.height-10))
+                pb.y = [[brickCenters objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] CGPointValue].y;
+            else
+                pb.y = self.bounds.size.height - 10;
+            
+            [[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] setDy:10];
+        }
+        
+        [[bricks objectAtIndex:[[brickVerticalMovers objectAtIndex:i] integerValue]] setCenter:pb];
+    }
    
     // Apply the tilt.  Limit maximum tilt to + or - 5
     [jumper setDx:[jumper dx] + tilt];
@@ -208,6 +351,7 @@
     
     // Jumper moves in the direction of gravity
     CGPoint p = [jumper center];
+
     
     p.x += [jumper dx];
     p.y -= [jumper dy];
@@ -275,6 +419,9 @@
     
     [jumper setCenter:p];
     // NSLog(@"Timestamp %f", ts);
+    
+    
+
 }
 
 

@@ -21,6 +21,9 @@
 @property (nonatomic) float y;
 @property (nonatomic) UIImageView *animatedImageView;
 @property (nonatomic) BOOL startOfNewLevel;
+@property (nonatomic, strong) NSMutableArray *brickCenters;
+@property (nonatomic, strong) NSMutableArray *brickVerticalMovers;
+@property (nonatomic, strong) NSMutableArray *brickHorizontalMovers;
 
 -(void) arrange:(CADisplayLink *) sender;
 
